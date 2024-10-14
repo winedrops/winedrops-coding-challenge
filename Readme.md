@@ -73,7 +73,7 @@ create table customer_order (
   - That section may not be the best written, but neither are our Trello tickets
   - So we'll see how you've interepreted the requirements
 - How easy is it to understand your code?
-  - It's easy to write code that is understood by the machine, it's more difficul to write somethign that other people can read and extend
+  - Your code may work, but can other people understand and extend it?
 
 ## How to submit
 
