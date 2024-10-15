@@ -16,6 +16,7 @@ We're looking for full stack engineers, so we've prepared you a task which touch
   - Top 10% wines should be highlighted in green
   - Bottom 10% wines should be highlighted in red
   - Ability to select what the `best selling means` - either by `revenue` or by `total number of bottls sold` or `number of orders`
+- Only do that for orders which have status of either `paid` or `dispatched`
 - Search
   - You start typing in the search bar and we only show the wines that match it
     - The search should be case insensitive
