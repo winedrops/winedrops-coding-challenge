@@ -16,6 +16,11 @@ We're looking for full stack engineers, so we've prepared you a task which touch
   - Top 10% wines should be highlighted in green
   - Bottom 10% wines should be highlighted in red
   - Ability to select what the `best selling means` - either by `revenue` or by `total number of bottls sold` or `number of orders`
+- **Important note**:
+  - We often sell the same wine at at different price (more details on that in the [Database schema section](#database-schema))
+  - For example, `Château Montclair` is sold both at £40.26 and £40.76
+  - So in the list of the best selling wine `Château Montclair` should appear only once and its entry should include the roll up of all orders, even if they were bought at a different price
+  - **Vintage**, however, does mean that it is a different wine
 - Only do that for orders which have status of either `paid` or `dispatched`
 - Search
   - You start typing in the search bar and we only show the wines that match it
@@ -42,6 +47,14 @@ We're looking for full stack engineers, so we've prepared you a task which touch
 - For the API stick to using `fastify` but you can create any endpoints you want
 
 ## Database schema
+
+- A few important things about the data model
+- The same wine can be sold at different prices
+  - For example, `Château Montclair` is sold both at £40.26 and £40.76
+- That's why we have two separate tables `master_wine` and `wine_product`
+  - `master_wine` contains the basic information about the wine - its name and vintage
+  - and `wine_product` is `master_wine` plus a price we sell it at
+  - `wine_product` does have the `name` field, but its for our own convenince rather than for showing it to the user
 
 ```sql
 create table master_wine (
